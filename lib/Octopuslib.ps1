@@ -89,7 +89,7 @@ function update-octopusvariable{
     )
     $libraryapi=$octopusurl+$(get-octopuslibraryvariablesurl $libraryname)+$apikeyappend
     $updatevalue = replace-octopusvariable $libraryname $variablename $replacevalue
-    $updatevalue=$updatevalue|ConvertTo-Json -Depth 999
+    $updatevalue=$updatevalue|ConvertTo-Json -Depth 100
     send-putrequest $libraryapi $updatevalue 
 }
 
